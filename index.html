@@ -52,6 +52,9 @@
 // }
 
       function onLoad() {
+        if(iframe == null){
+        iframe = document.getElementById("P5W829");
+        }
         console.log("Github I'm onLoad");
         // Listen for button clicks
         input.addEventListener("change", onChange);
