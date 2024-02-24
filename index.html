@@ -36,20 +36,12 @@
     if(iframe == null){
         iframe = document.getElementById("P5W829");
         }
-    debugger;
-    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-    // Check if loading is complete
-    if (  iframeDoc.readyState  == 'complete' ) {
-        //iframe.contentWindow.alert("Hello");
-        iframe.contentWindow.onload = function(){
-            console.log("checkIframeLoaded I am loaded");
-        };
+      if(iframe != null){
         // The loading is complete, call the function we want executed once the iframe is loaded
         onLoad();
         return;
     } 
-
+console.log("in the loop");
     // If we are here, it is not loaded. Set things up so we check   the status again in 100 milliseconds
     window.setTimeout(checkIframeLoaded, 100);
 }
