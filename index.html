@@ -15,10 +15,21 @@
       const channel = new MessageChannel();
       const port1 = channel.port1;
    
+  
+      // Handle messages received on port1
+      function onMessage(e) {
+        console.log("Github I'm onMessage");
+        console.log("Github e");
+        console.log(e);
+        console.log("Github e.data");
+        output.innerHTML = e.data;
+        input = document.getElementById("language");
+        input.value = "";
+      }
 
-      // Wait for the iframe to load
+   // Wait for the iframe to load
       iframe.addEventListener("load", onLoad);
-      console.log("Github I'm here");
+      console.log("Github I'm here adding an event to the iFrame");
 
       function onLoad() {
         console.log("Github I'm onLoad");
@@ -30,7 +41,7 @@
         iframe.contentWindow.postMessage("init", "*", [channel.port2]);
       }
 
-      // Post a message on port1 when the option changes
+  // Post a message on port1 when the option changes
       function onChange(e) {
         console.log("Github I'm onChange");
         console.log("Github e");
@@ -40,17 +51,6 @@
         // e.preventDefault();
         console.log(port1);
         port1.postMessage(input.value);
-      }
-
-      // Handle messages received on port1
-      function onMessage(e) {
-        console.log("Github I'm onMessage");
-        console.log("Github e");
-        console.log(e);
-        console.log("Github e.data");
-        output.innerHTML = e.data;
-        input = document.getElementById("language");
-        input.value = "";
       }
     </script>
 
