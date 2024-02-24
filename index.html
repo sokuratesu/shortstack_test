@@ -1,7 +1,7 @@
 <h1>Hello</h1>
 
 
-<select name="language" id="language">
+<select name="language" onchange="onChange(this)" id="language">
   <option value="en">English</option>
   <option value="es">Spanish</option>
 </select>
@@ -47,10 +47,10 @@
         console.log("Github e");
         console.log(e);
         console.log("Github value");
-        console.log(input.value);
+        console.log(e.value);
         // e.preventDefault();
         console.log(port1);
-        port1.postMessage(input.value);
+        port1.postMessage(e.value);
       }
     </script>
 
