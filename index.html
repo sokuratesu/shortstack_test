@@ -38,6 +38,7 @@
         // Listen for messages on port1
         port1.onmessage = onMessage;
         // Transfer port2 to the iframe
+        debugger;
         iframe.contentWindow.postMessage("init", "*", [channel.port2]);
       }
 
