@@ -28,22 +28,28 @@
       }
 
    // Wait for the iframe to load
-      iframe.addEventListener("load", onLoad);
+      // iframe.addEventListener("load", onLoad);
       console.log("Github I'm here adding an event to the iFrame");
 
-  function checkIframeLoaded(){
-    // Get handle to the iframe element
-    let iframe = document.getElementById("P5W829");;
-    let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+//   function checkIframeLoaded() {
+//     // Get a handle to the iframe element
+//     var iframe = document.getElementById('i_frame');
+//     var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-    // Check if loading is complete
-    if(iframeDoc.readyState == 'complete'){
-      console.log("Github iFrame finished loading");
-      onLoad();
-      return;
-    }
-      window.setTimeout(checkIframeLoaded,100);
-    }
+//     // Check if loading is complete
+//     if (  iframeDoc.readyState  == 'complete' ) {
+//         //iframe.contentWindow.alert("Hello");
+//         iframe.contentWindow.onload = function(){
+//             console.log("I am loaded");
+//         };
+//         // The loading is complete, call the function we want executed once the iframe is loaded
+//         onLoad();
+//         return;
+//     } 
+
+//     // If we are here, it is not loaded. Set things up so we check   the status again in 100 milliseconds
+//     window.setTimeout(checkIframeLoaded, 100);
+// }
 
       function onLoad() {
         console.log("Github I'm onLoad");
