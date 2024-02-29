@@ -271,9 +271,9 @@ function update_languages_str_on_main_page(lang_code_selected){
         let cur_key = key
       	cur_key = cur_key.replace(/ /g, '_');
       
-      	let cur_el = document.querySelector(".update_lang."+cur_key);
+      	let cur_el = document.querySelector("."+cur_key);
         console.log("5");
-        console.log("Github : let cur_el = document.querySelector('.update_lang.'"+cur_key+");");
+        console.log("Github : let cur_el = document.querySelector('.'"+cur_key+");");
         console.log("Github : cur_key");
         console.log(cur_key);
         console.log("Github : cur_el");
