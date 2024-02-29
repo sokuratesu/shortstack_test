@@ -294,7 +294,12 @@ function update_languages_str_on_main_page(lang_code_selected){
                 case "H3":
                 case "SPAN":
                 case "DT":
+			      if(typeof cur_el.innerHTML !== 'undefined'){
+                  	cur_el.innerHTML = value;
+                  }
+			      break;
                 case "DD":
+			      debugger;
                   console.log("9");
                   if(typeof cur_el.innerHTML !== 'undefined'){
                   	cur_el.innerHTML = value;
