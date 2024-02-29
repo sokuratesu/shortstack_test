@@ -1,0 +1,66 @@
+{
+  "English": {
+    "Submission Page": {
+      "Header Line 1": "WELCOME TO <a href=\"https://www.levi.com/\">LINK</a>",
+      "Header Line 2": "#LEVISOPENCALL <a href=\"https://www.levi.com/\">LINK</a>",
+      "About Line 1": "Levi’s Open Call is a global search for dancers and movers.  <a href=\"https://www.levi.com/\">LINK</a>",
+      "About Line 2": "This is your chance to be in Kaytranada’s music video and work with the widely celebrated choreographer Sherrie Silver. <a href=\"https://google.com\">LINK</a>  <a href=\"https://www.levi.com/\">LINK</a>"
+    }
+  },
+  "Spanish": {
+    "Submission Page": {
+      "Header Line 1": "Bienvenido a <a href=\"https://www.levi.com/\"> enlace </a>",
+      "Header Line 2": "#Levisopencall <a href=\"https://www.levi.com/\"> enlace </a>",
+      "About Line 1": "La llamada abierta de Levi es una búsqueda global de bailarines y motores. <a href=\"https://www.levi.com/\"> enlace </a>",
+      "About Line 2": "Esta es su oportunidad de estar en el video musical de Kaytranada y trabajar con la artesana sherrie Silver. <a href=\"https://google.com\"> enlace </a> <a href=\"https://www.levi.com/\"> enlace </a>"
+    }
+  },
+  "Dutch": {
+    "Submission Page": {
+      "Header Line 1": "Welkom bij <a href=\"https://www.levi.com/\"> link </a>",
+      "Header Line 2": "#LevisOpenCall <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 1": "Levi's open oproep is een wereldwijde zoektocht naar dansers en verhuizers. <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 2": "Dit is je kans om in de muziekvideo van Kaytranada te zijn en samen te werken met de wijd gevierde choreograaf Sherrie Silver. <a href=\"https://google.com\"> link </a> <a href=\"https://www.levi.com/\"> link </a>"
+    }
+  },
+  "French": {
+    "Submission Page": {
+      "Header Line 1": "Bienvenue à <a href=\"https://www.levi.com/\"> lien </a>",
+      "Header Line 2": "#LevisOpenCall <a href=\"https://www.levi.com/\"> lien </a>",
+      "About Line 1": "Le Levi’s Open Call est une recherche globale de danseurs et de déménageurs. <a href=\"https://www.levi.com/\"> lien </a>",
+      "About Line 2": "C'est votre chance d'être dans le clip de Kaytranada et de travailler avec le chorégraphe largement célèbre Sherrie Silver. <a href=\"https://google.com\"> lien </a> <a href=\"https://www.levi.com/\"> lien </a>"
+    }
+  },
+  "German": {
+    "Submission Page": {
+      "Header Line 1": "Willkommen bei <a href=\"https://www.levi.com/\"> link </a>",
+      "Header Line 2": "#Levisopencall <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 1": "Levis offener Anruf ist eine globale Suche nach Tänzern und Umzugsunternehmen. <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 2": "Dies ist Ihre Chance, in Kaytranadas Musikvideo zu sein und mit der weit verbreiteten Choreografin Sherrie Silver zusammenzuarbeiten. <a href=\"https://google.com\"> link </a> <a href=\"https://www.levi.com/\"> link </a>"
+    }
+  },
+  "Portuguese": {
+    "Submission Page": {
+      "Header Line 1": "Bem -vindo ao <a href=\"https://www.levi.com/\"> link </a>",
+      "Header Line 2": "#Levisopencall <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 1": "A chamada aberta de Levi é uma busca global por dançarinos e motores. <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 2": "Esta é sua chance de estar no videoclipe de Kaytranada e trabalhar com o coreógrafo amplamente célebre Sherrie Silver. <a href=\"https://google.com\"> link </a> <a href=\"https://www.levi.com/\"> link </a>"
+    }
+  },
+  "Japanese": {
+    "Submission Page": {
+      "Header Line 1": "<a href=\"https://www.levi.com/\">リンク</a>へようこそ",
+      "Header Line 2": "#levisopencall <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 1": "Leviのオープンコールは、ダンサーとムーバーのグローバルな検索です。 <a href=\"https://www.levi.com/\"> link </a>",
+      "About Line 2": "これは、Kaytranadaのミュージックビデオに参加し、広く称賛されている振付師のSherrie Silverと協力するチャンスです。 <a href=\"https://google.com\"> link </a> <a href=\"https://www.levi.com/\"> link </a>"
+    }
+  },
+  "Korean": {
+    "Submission Page": {
+      "Header Line 1": "<a href=\"https://www.levi.com/\"> 링크 </a>에 오신 것을 환영합니다",
+      "Header Line 2": "#levisopencall <a href=\"https://www.levi.com/\"> 링크 </a>",
+      "About Line 1": "Levi의 공개 전화는 댄서와 발동기를위한 글로벌 검색입니다. <a href=\"https://www.levi.com/\"> 링크 </a>",
+      "About Line 2": "이것은 Kaytranada의 뮤직 비디오에 참여하고 널리 축하되는 안무가 Sherrie Silver와 함께 일할 수있는 기회입니다. <a href=\"https://google.com\"> 링크 </a> <a href=\"https://www.levi.com/\"> link </a>"
+    }
+  }
+}
