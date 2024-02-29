@@ -292,8 +292,12 @@ function update_languages_str_on_main_page(lang_code_selected){
                   cur_el.querySelector("input").placeholder = value;
                   break;
                 case "P":
-                case "H1":
-                case "span":
+                case "H1":    
+                case "H2":    
+                case "H3":
+                case "SPAN":
+                case "DT":
+                case "DD":
                   console.log("9");
                   cur_el.innerHTML = value;
                   break;
