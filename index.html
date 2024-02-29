@@ -82,9 +82,13 @@
         console.log(e.value);
         // e.preventDefault();
         console.log(port1);
-        port1.postMessage(e.value);
-
 	let sel = e.value.split(",");
+	      
+	let mes = JSON.stringify({ "lang_selected_code": sel[0], "lang_selected_name": sel[1], "lang_json": all_languages_json });
+	      
+        port1.postMessage(mes);
+
+	
     	update_languages_str_on_main_page(sel[1]);
 	      
       }
