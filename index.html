@@ -29,7 +29,7 @@
       var channel = new MessageChannel();
       var port1 = channel.port1
       var all_languages_json = {};
-      loadJSON("https://sokuratesu.github.io/shortstack_test/json_all_languages.txt", catch_json_text,'jsonp');
+      load_lang_JSON("https://sokuratesu.github.io/shortstack_test/json_all_languages.txt", catch_json_text,'jsonp');
    
   
       // Handle messages received on port1
@@ -89,8 +89,8 @@
 	      
       }
 
-	// loadJSON method to open the JSON file.
-  function loadJSON(path, success, error) {
+	// load_lang_JSON method to open the JSON file.
+  function load_lang_JSON(path, success, error) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
