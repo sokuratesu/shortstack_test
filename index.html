@@ -70,6 +70,10 @@
         // e.preventDefault();
         console.log(port1);
         port1.postMessage(e.value);
+
+	document.querySelector("#rich_text > div > p").innerHTML = e.value;
+
+	      
       }
     </script>
 
