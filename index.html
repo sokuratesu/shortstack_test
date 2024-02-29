@@ -280,7 +280,13 @@ function update_languages_str_on_main_page(lang_code_selected){
               switch(cur_el.nodeName){
                 case "DIV":
                   //search for the input
-                  cur_el.querySelector("input").placeholder = value;
+                  console.log("8");
+                  if(typeof cur_el.querySelector("input") !== 'undefined'){
+                  	cur_el.querySelector("input").placeholder = value;
+                  }
+                  if(typeof cur_el.querySelector("select") !== 'undefined'){
+                  	cur_el.querySelector("input").placeholder = value;
+                  }
                   break;
                 case "P":
                 case "H1":    
@@ -289,7 +295,10 @@ function update_languages_str_on_main_page(lang_code_selected){
                 case "SPAN":
                 case "DT":
                 case "DD":
-                  cur_el.innerHTML = value;
+                  console.log("9");
+                  if(typeof cur_el.innerHTML !== 'undefined'){
+                  	cur_el.innerHTML = value;
+                  }
                   break;
                 }
               }
