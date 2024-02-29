@@ -272,23 +272,14 @@ function update_languages_str_on_main_page(lang_code_selected){
       	cur_key = cur_key.replace(/ /g, '_');
       
       	let cur_el = document.querySelector("."+cur_key);
-        console.log("5");
-        console.log("Github : let cur_el = document.querySelector('.'"+cur_key+");");
-        console.log("Github : cur_key");
-        console.log(cur_key);
-        console.log("Github : cur_el");
-        console.log(cur_el);
           if(typeof cur_el !== 'undefined' && cur_el != null){
-        console.log("6");
 
             if(typeof cur_el.nodeName !== 'undefined' && cur_el.nodeName != null){
-              console.log("7");
               console.log("Github : cur_el.nodeName");
               console.log(cur_el.nodeName);
               switch(cur_el.nodeName){
                 case "DIV":
                   //search for the input
-                  console.log("8");
                   cur_el.querySelector("input").placeholder = value;
                   break;
                 case "P":
@@ -298,7 +289,6 @@ function update_languages_str_on_main_page(lang_code_selected){
                 case "SPAN":
                 case "DT":
                 case "DD":
-                  console.log("9");
                   cur_el.innerHTML = value;
                   break;
                 }
