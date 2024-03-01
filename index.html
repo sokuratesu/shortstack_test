@@ -169,30 +169,21 @@
 
 
 <script type="text/javascript">
-    var iframe = document.getElementById("P5W829");
+    var iframe = document.querySelector("iframe");
 
-    var channel = new MessageChannel();
-    var port1 = channel.port1
-    var all_languages_json = { };
-    // load_lang_JSON("https://sokuratesu.github.io/shortstack_test/json_all_languages_2.json", catch_json_text,'jsonp');
+    const channel = new MessageChannel();
+    const port1 = channel.port1
+    var all_languages_json = {};
 
+	// retrieve the JSON data
 	fetch('./json_all_languages_2.json')
     .then((response) => response.json())
     .then((json) => catch_json_text(json));
 
-	// function catchme(json){
-	// 	console.log("JJJJJJJJJ");
-	// console.log(json);
-	// }
-	
-
-
-    // Handle messages received on port1
+	// Handle messages received on port1
     function onMessage(e) {
         output.innerHTML = e.data;
     console.log(e.data);
-        // input = document.getElementById("language");
-        // input.value = "";
       }
 
     function addPortToFrame(){
@@ -200,7 +191,7 @@
 		}
 
     function preAddPort(){
-        iframe = document.getElementById("P5W829");
+        iframe = document.querySelector("iframe");
     setTimeout(addPortToFrame, 2000);
 	}
 
@@ -222,23 +213,6 @@
     port1.postMessage(mes);
     update_languages_str_on_main_page(sel[1]);
       }
-
-    // load_lang_JSON method to open the JSON file.
-  //   function load_lang_JSON(path, success, error) {
-  //   var xhr = new XMLHttpRequest();
-  //   xhr.onreadystatechange = function () {
-  //     if (xhr.readyState === 4) {
-  //       if (xhr.status === 200) {
-  //       success(JSON.parse(xhr.responseText));
-  //       }
-  //   else {
-  //       error(xhr);
-  //       }
-  //     }
-  //   };
-  //   xhr.open('GET', path, true);
-  //   xhr.send();
-  // }
 
     function catch_json_text(Data)
     {
