@@ -178,12 +178,12 @@
 
 	fetch('./json_all_languages_2.json')
     .then((response) => response.json())
-    .then((json) => catchme(json));
+    .then((json) => catch_json_text(json));
 
-	function catchme(json){
-		console.log("JJJJJJJJJ");
-	console.log(json);
-	}
+	// function catchme(json){
+	// 	console.log("JJJJJJJJJ");
+	// console.log(json);
+	// }
 	
 
 
@@ -224,21 +224,21 @@
       }
 
     // load_lang_JSON method to open the JSON file.
-    function load_lang_JSON(path, success, error) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-        success(JSON.parse(xhr.responseText));
-        }
-    else {
-        error(xhr);
-        }
-      }
-    };
-    xhr.open('GET', path, true);
-    xhr.send();
-  }
+  //   function load_lang_JSON(path, success, error) {
+  //   var xhr = new XMLHttpRequest();
+  //   xhr.onreadystatechange = function () {
+  //     if (xhr.readyState === 4) {
+  //       if (xhr.status === 200) {
+  //       success(JSON.parse(xhr.responseText));
+  //       }
+  //   else {
+  //       error(xhr);
+  //       }
+  //     }
+  //   };
+  //   xhr.open('GET', path, true);
+  //   xhr.send();
+  // }
 
     function catch_json_text(Data)
     {
