@@ -167,90 +167,62 @@
 </body>
 </html>
 
-<script>
-     var input = document.getElementById("language");
-      var output = document.getElementById("message-output");
-      var iframe = document.getElementById("P5W829");
-      
-      var channel = new MessageChannel();
-      var port1 = channel.port1
-      var all_languages_json = {};
-      // load_lang_JSON("https://sokuratesu.github.io/shortstack_test/json_all_languages.txt", catch_json_text,'jsonp');
-	load_lang_JSON("https://sokuratesu.github.io/shortstack_test/json_all_languages_2.json", catch_json_text,'jsonp');
-   
-  
-      // Handle messages received on port1
-      function onMessage(e) {
-        console.log("Github I'm onMessage");
-        console.log("Github e");
-        console.log(e);
-        console.log("Github e.data");
+
+<script type="text/javascript">
+    var iframe = document.getElementById("P5W829");
+
+    var channel = new MessageChannel();
+    var port1 = channel.port1
+    var all_languages_json = { };
+    load_lang_JSON("https://sokuratesu.github.io/shortstack_test/json_all_languages_2.json", catch_json_text,'jsonp');
+
+
+    // Handle messages received on port1
+    function onMessage(e) {
         output.innerHTML = e.data;
-        input = document.getElementById("language");
-        input.value = "";
+    console.log(e.data);
+        // input = document.getElementById("language");
+        // input.value = "";
       }
 
-   // Wait for the iframe to load
-      // iframe.addEventListener("load", onLoad);
-      // console.log("Github I'm here adding an event to the iFrame");
-
-
-  function addPortToFrame(){
-	  
-			 onLoad();
+    function addPortToFrame(){
+        onLoad();
 		}
 
-	function preAddPort(){
-		iframe = document.getElementById("P5W829");
-		setTimeout(addPortToFrame, 2000);
+    function preAddPort(){
+        iframe = document.getElementById("P5W829");
+    setTimeout(addPortToFrame, 2000);
 	}
 
 
-      function onLoad() {
-        // if(iframe == null){
-        // iframe = document.getElementById("P5W829");
-        // }
+    function onLoad() {
         console.log("Github I'm onLoad");
-        // Listen for button clicks
-        // input.addEventListener("change", onChange);
-        // Listen for messages on port1
-        port1.onmessage = onMessage;
-        // Transfer port2 to the iframe
-        iframe.contentWindow.postMessage("init", "*", [channel.port2]);
-        console.log("Github iFrame Loaded");
+    // Listen for messages on port1
+    port1.onmessage = onMessage;
+    // Transfer port2 to the iframe
+    iframe.contentWindow.postMessage("init", "*", [channel.port2]);
+    console.log("Github iFrame Loaded");
       }
 
-  // Post a message on port1 when the option changes
-      function onChange(e) {
-        console.log("Github I'm onChange");
-        console.log("Github e");
-        console.log(e);
-        console.log("Github value");
-        console.log(e.value);
-        // e.preventDefault();
-        console.log(port1);
-	let sel = e.value.split(",");
-	      
-	let mes = JSON.stringify({ "lang_selected_code": sel[0], "lang_selected_name": sel[1], "lang_json": all_languages_json });
-	      console.log(mes);
-	      console.log("");
-        port1.postMessage(mes);
+    // Post a message on port1 when the option changes
+    function onChange(e) {
+        let sel = e.value.split(",");
 
-	
-    	update_languages_str_on_main_page(sel[1]);
-	      
+    let mes = JSON.stringify({"lang_selected_code": sel[0], "lang_selected_name": sel[1], "lang_json": all_languages_json });
+    port1.postMessage(mes);
+    update_languages_str_on_main_page(sel[1]);
       }
 
-	// load_lang_JSON method to open the JSON file.
-  function load_lang_JSON(path, success, error) {
+    // load_lang_JSON method to open the JSON file.
+    function load_lang_JSON(path, success, error) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          success(JSON.parse(xhr.responseText));
+        success(JSON.parse(xhr.responseText));
         }
-        else {
-          error(xhr);
+    else {
+        error(xhr);
         }
       }
     };
@@ -258,122 +230,87 @@
     xhr.send();
   }
 
-	function catch_json_text(Data)
-  {
-		all_languages_json = Data;
+    function catch_json_text(Data)
+    {
+        all_languages_json = Data;
 
   }
 
 
 
-function update_languages_str_on_main_page(lang_code_selected){
-	console.log("Github update_languages_str");
-    console.log("Github lang_code_selected");
-    console.log(lang_code_selected);
-    console.log("Github all_languages_m");
-    console.log(all_languages_json);
-    
-    let sel_lang_arr = all_languages_json[lang_code_selected];
-		// let matches = document.querySelectorAll(".update_lang");
-    Object.entries(sel_lang_arr).forEach(([key_m, value_m]) => {
-      let sel_sub_lang_arr = sel_lang_arr[key_m];
-      	console.log("Github : sel_sub_lang_arr");
-        console.log(sel_sub_lang_arr);
-      Object.entries(sel_sub_lang_arr).forEach(([key, value]) => {
-      	
-        let cur_key = key
-      	cur_key = cur_key.replace(/ /g, '_');
-      
-      	let cur_el = document.querySelector("."+cur_key);
-          if(typeof cur_el !== 'undefined' && cur_el != null){
+    function update_languages_str_on_main_page(lang_code_selected)
+    {
+        let sel_lang_arr = all_languages_json[lang_code_selected];
 
-            if(typeof cur_el.nodeName !== 'undefined' && cur_el.nodeName != null){
-              console.log("Github : cur_el.nodeName");
-              console.log(cur_el.nodeName);
-              switch(cur_el.nodeName){
-                case "DIV":
-                  //search for the input
-                  console.log("8");
-                  // checkbox
-                  let cur_el_div = document.querySelector(".ss_checkbox_field."+cur_key);
-                  if(typeof cur_el_div !== 'undefined' && cur_el_div != null){
-                    if(typeof cur_el_div.querySelector(".main_field_label").innerHTML !== 'undefined'){
-                  	cur_el_div.querySelector(".main_field_label").innerHTML = value;
-                  	}
-                  }else{
-                    let cur_img = cur_el.querySelector(".image_field_block > label");
-                    if(typeof cur_img !== 'undefined' && cur_img != null){
-                      cur_img.innerHTML = value;
-                    }
-                    else{
-                    if(typeof cur_el.querySelector("input") !== 'undefined' && cur_el.querySelector("input") != null){
-                      if(typeof cur_el.querySelector("input").placeholder !== 'udefined' && cur_el.querySelector("input").placeholder != null){
-                      cur_el.querySelector("input").placeholder = value;
-                      }
-                    }
-                    if(typeof cur_el.querySelector("select") !== 'undefined' && cur_el.querySelector("select") != null){
+        Object.entries(sel_lang_arr).forEach(([key_m, value_m]) => {
+            let sel_sub_lang_arr = sel_lang_arr[key_m];
+        Object.entries(sel_sub_lang_arr).forEach(([key, value]) => {
 
+            let cur_key = key
+            cur_key = cur_key.replace(/ /g, '_');
+
+            let cur_el = document.querySelector("."+cur_key);
+            if(typeof cur_el !== 'undefined' && cur_el != null)
+            {
+                if(typeof cur_el.nodeName !== 'undefined' && cur_el.nodeName != null)
+                {
+                    switch(cur_el.nodeName)
+                    {
+                        case "DIV":
+            
+                            let cur_el_div = document.querySelector(".ss_checkbox_field."+cur_key);
+                            if(typeof cur_el_div !== 'undefined' && cur_el_div != null)
+                            {
+                                if(typeof cur_el_div.querySelector(".main_field_label").innerHTML !== 'undefined')
+                                {
+                                    cur_el_div.querySelector(".main_field_label").innerHTML = value;
+                                }
+                            }
+                            else
+                            {
+                                let cur_img = cur_el.querySelector(".image_field_block > label");
+                                if(typeof cur_img !== 'undefined' && cur_img != null)
+                                {
+                                    cur_img.innerHTML = value;
+                                }
+                                else
+                                {
+                                    if(typeof cur_el.querySelector("input") !== 'undefined' && cur_el.querySelector("input") != null)
+                                    {
+                                        if(typeof cur_el.querySelector("input").placeholder !== 'udefined' && cur_el.querySelector("input").placeholder != null)
+                                        {
+                                            cur_el.querySelector("input").placeholder = value;
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case "string":
+                        break;
+                        case "P":
+                        case "H1":
+                        case "H2":
+                        case "H3":
+                        case "SPAN":
+                        case "DT":
+                            if(typeof cur_el.innerHTML !== 'undefined')
+                            {
+                                cur_el.innerHTML = value;
+                            }
+                            break;
+                        case "DD":
+                            if(typeof cur_el.innerHTML !== 'undefined')
+                            {
+                                cur_el.innerHTML = value;
+                            }
+                            break;
                     }
-                    }
-                  }
-                  break;
-                case "string":
-                  break;
-                case "P":
-                case "H1":    
-                case "H2":    
-                case "H3":
-                case "SPAN":
-                case "DT":
-                  console.log("9");
-                  if(typeof cur_el.innerHTML !== 'undefined'){
-                  	cur_el.innerHTML = value;
-                  }
-                  break;
-                case "DD":
-			      debugger
-                  console.log("10");
-                  if(typeof cur_el.innerHTML !== 'undefined'){
-                  	cur_el.innerHTML = value;
-                  }
-                  break;
                 }
-              }
-          }
+            }
+        });
         
-        
-      });
-      
-    });
-    // let sel_lang_arr = all_languages_json[lang_code_selected]["Submission Page"];
-    // let matches = document.querySelectorAll(".update_lang");
-    
-    // Object.entries(sel_lang_arr).forEach(([key, value]) => {
-    //     let cur_key = key
-    //   cur_key = cur_key.replace(/ /g, '_');
-      
-    //   let cur_el = document.querySelector(".update_lang."+cur_key);
-    //   if(typeof cur_el !== 'undefined' && cur_el != null){
-        
-    //     if(typeof cur_el.nodeName !== 'undefined' && cur_el.nodeName != null){
-    //       console.log("Github: cur_el.nodeName");
-    //       switch(cur_el.nodeName){
-    //         case "DIV":
-    //           //search for the input
-    //           cur_el.querySelector("input").placeholder = value;
-    //           break;
-    //         case "P":
-    //         case "H1":
-    //         case "span":
-    //           cur_el.innerHTML = value;
-    //           break;
-    //       }
-    //     }
-    //   }
-    //   });
-  }
-
-	
-    </script>
+        });
+    }
+</script>
 
 
