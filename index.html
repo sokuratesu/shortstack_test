@@ -176,6 +176,16 @@
     var all_languages_json = { };
     load_lang_JSON("https://sokuratesu.github.io/shortstack_test/json_all_languages_2.json", catch_json_text,'jsonp');
 
+	fetch('./json_all_languages_2.json')
+    .then((response) => response.json())
+    .then((json) => catchme(json));
+
+	function catchme(json){
+		console.log("JJJJJJJJJ");
+	console.log(json);
+	}
+	
+
 
     // Handle messages received on port1
     function onMessage(e) {
