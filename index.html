@@ -12,7 +12,16 @@
     <link rel="stylesheet" crossorigin="" href="https://pr-11.dmktgy1tohlbz.amplifyapp.com/assets/index-BEaDxwfh.css">
 </head>
 	<body>
-
+<script>
+if (self == top) {
+// Everything checks out, show the page.
+// document.documentElement.style.display = 'block';
+	console.log("inside");
+} else {
+// Break out of the frame.
+top.location = self.location;
+}
+</script>
 
       <section class="_form_1nkst_222">
         <div class="_wrapper_1nkst_240">
